@@ -19,13 +19,13 @@ configuration:
 
 environment:
   matrix:
-#    - RUST_VERSION: 1.1.0
+    - RUST_VERSION: 1.2.0
 #    - RUST_VERSION: beta
-    - RUST_VERSION: nightly
+#    - RUST_VERSION: nightly
 
-matrix:
-  allow_failures:
-    - platform: x86
+# matrix:
+#   allow_failures:
+#     - platform: x86
 
 build: false
 
@@ -34,4 +34,4 @@ test_script:
           $env:config_flags = "--release"
         }
   - cargo build --verbose %config_flags%
-  - cargo test --verbose
+  - cargo test --verbose %config_flags%
