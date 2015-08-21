@@ -9,6 +9,8 @@ sodiumoxide
 This package aims to provide a type-safe and efficient Rust binding that's just
 as easy to use.
 
+**Primary Maintainer:** Fraser Hutchison (fraser.hutchison@maidsafe.net)
+
 Dependencies
 ------------
 
