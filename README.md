@@ -55,6 +55,6 @@ MIT
 Status
 ------
 
-|Crate|Linux/OS X|Windows|
-|:---:|:--------:|:-----:|
-|[![](http://meritbadge.herokuapp.com/maidsafe_sodiumoxide)](https://crates.io/crates/maidsafe_sodiumoxide)|[![Build Status](https://travis-ci.org/maidsafe/sodiumoxide.svg?branch=master)](https://travis-ci.org/maidsafe/sodiumoxide)|[![Build status](https://ci.appveyor.com/api/projects/status/5sbhddg2x2ncg10v/branch/master?svg=true)](https://ci.appveyor.com/project/MaidSafe-QA/sodiumoxide/branch/master)|
+|Crate|Linux/OS X|Windows|Coverage|
+|:---:|:--------:|:-----:|:------:|
+|[![](http://meritbadge.herokuapp.com/maidsafe_sodiumoxide)](https://crates.io/crates/maidsafe_sodiumoxide)|[![Build Status](https://travis-ci.org/maidsafe/sodiumoxide.svg?branch=master)](https://travis-ci.org/maidsafe/sodiumoxide)|[![Build status](https://ci.appveyor.com/api/projects/status/5sbhddg2x2ncg10v/branch/master?svg=true)](https://ci.appveyor.com/project/MaidSafe-QA/sodiumoxide/branch/master)|[![Coverage Status](https://coveralls.io/repos/maidsafe/sodiumoxide/badge.svg?branch=master&service=github)](https://coveralls.io/github/maidsafe/sodiumoxide?branch=master)|
