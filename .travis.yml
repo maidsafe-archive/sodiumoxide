@@ -25,14 +25,12 @@ install:
 script:
   - curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/build_and_run_tests.sh | bash
 after_success: |
-    [[ $TRAVIS_OS_NAME = linux ]] &&
-    [[ ${TRAVIS_JOB_NUMBER##*.} -ne 1 ]] &&
-    [[ $TRAVIS_BRANCH = master ]] &&
-    [[ $TRAVIS_PULL_REQUEST = false ]] &&
-
-    curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/deploy_docs.sh | bash &&
-    curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_coverage.sh &&
-    head -n -1 run_coverage.sh > run_coverage_modified.sh &&
-    echo '$HOME/bin/kcov --coveralls-id=$TRAVIS_JOB_ID --include-path=src target/kcov target/debug/maidsafe_$ProjectName-*' >> run_coverage_modified.sh &&
-    . run_coverage_modified.sh
-
+    if [[ $TRAVIS_OS_NAME = linux ]] && [[ ${TRAVIS_JOB_NUMBER##*.} -ne 1 ]] &&
+       [[ $TRAVIS_BRANCH = master ]] && [[ $TRAVIS_PULL_REQUEST = false ]]; then
+      curl -sSL https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/deploy_docs.sh | bash
+      curl -sSLO https://github.com/maidsafe/QA/raw/master/Bash%20Scripts/Travis/run_coverage.sh
+      head -n -1 run_coverage.sh > run_coverage_modified.sh
+      echo '$HOME/bin/kcov --coveralls-id=$TRAVIS_JOB_ID --include-path=src target/kcov target/debug/maidsafe_$ProjectName-*' >> run_coverage_modified.sh
+      cat run_coverage_modified.sh
+      . run_coverage_modified.sh
+    fi
